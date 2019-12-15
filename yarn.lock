@@ -1125,9 +1125,9 @@
     metro-react-native-babel-preset "^0.53.1"
     yargs "^13.2.2"
 
-"@react-native-community/slider@^1.1.2":
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@react-native-community/slider/-/slider-1.1.2.tgz#a3eaeb7e0c6808c0d34c2dbb25eb855acc67ca1b"
+"@react-native-community/slider@^2.0.0":
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/@react-native-community/slider/-/slider-2.0.8.tgz#c4a3c342638270e0adc942b51427ec17104a786d"
 
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
@@ -3435,7 +3435,11 @@ escape-html@~1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/escape-html/-/escape-html-1.0.3.tgz#0258eae4d3d0c0974de1c169188ef0051d1d1988"
 
-escape-string-regexp@1.0.5, escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
+escape-string-regexp@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-2.0.0.tgz#a30304e99daa32e23b2fd20f51babd07cffca344"
+
+escape-string-regexp@^1.0.2, escape-string-regexp@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
 
@@ -7205,11 +7209,11 @@ react-native-vector-icons@6.0.0:
   version "0.5.0"
   resolved "git://github.com/yjose/react-native-webview-invoke.git#0b9d9ee85c0cd4a47626c03f8de53c596dd67e4a"
 
-react-native-webview@^5.10.0:
-  version "5.10.0"
-  resolved "https://registry.yarnpkg.com/react-native-webview/-/react-native-webview-5.10.0.tgz#01783e77a0724c74cc6d405d7d36f2da3bd9c11c"
+react-native-webview@^7.0.0:
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/react-native-webview/-/react-native-webview-7.6.0.tgz#6bae76430200be5e5ead7d986af2fa341b650186"
   dependencies:
-    escape-string-regexp "1.0.5"
+    escape-string-regexp "2.0.0"
     invariant "2.2.4"
 
 react-proxy@^1.1.7:
