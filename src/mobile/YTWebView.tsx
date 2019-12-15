@@ -28,6 +28,19 @@ export default class YTWebView extends Component<YTWebViewProps> {
     this.initPlayer();
   };
 
+  componentDidUpdate = async (prevProps) => {
+    if (this.props.videoId !== prevProps.videoId) {
+      this.webview.reload();
+      this.invoke = createInvoke(() => this.webview);
+      this._createPlayer = this.invoke.bind("createPlayer");
+      this._playVideo = this.invoke.bind("playVideo");
+      this._pauseVideo = this.invoke.bind("pauseVideo");
+      this._seekTo = this.invoke.bind("seekTo");
+      this.invokeFunctions();
+      this.initPlayer();
+    }
+  }
+
   initPlayer = async () => {
     // create Player
     const { videoId, autoPlay } = this.props;
