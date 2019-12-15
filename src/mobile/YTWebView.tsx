@@ -46,7 +46,6 @@ export default class YTWebView extends Component<YTWebViewProps> {
       <WebView
         ref={(webview: WebView) => (this.webview = webview)}
         onMessage={this.invoke.listener}
-        useWebKit
         originWhitelist={["*"]}
         allowsInlineMediaPlayback={true}
         // startInLoadingState
