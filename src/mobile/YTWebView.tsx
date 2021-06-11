@@ -15,12 +15,12 @@ export default class YTWebView extends Component<YTWebViewProps> {
   invokeFunctions = () => {
     // invoke fuctions
     const { onReady, onError, onPlaying, onDurationReady, onEnd } = this.props;
-    this.invoke.define("onReady", onReady);
-    this.invoke.define("onError", onError);
+    this.invoke.define("onReady", onReady!!);
+    this.invoke.define("onError", onError!!);
     this.invoke.define("onStateChange", this.onStateChange);
-    this.invoke.define("onPlaying", onPlaying);
-    this.invoke.define("onEnd", onEnd);
-    this.invoke.define("onDurationReady", onDurationReady);
+    this.invoke.define("onPlaying", onPlaying!!);
+    this.invoke.define("onEnd", onEnd!!);
+    this.invoke.define("onDurationReady", onDurationReady!!);
   };
 
   componentDidMount = async () => {
@@ -28,7 +28,7 @@ export default class YTWebView extends Component<YTWebViewProps> {
     this.initPlayer();
   };
 
-  componentDidUpdate = async (prevProps) => {
+  componentDidUpdate = async (prevProps: any) => {
     if (this.props.videoId !== prevProps.videoId) {
       this.webview.reload();
       this.invoke = createInvoke(() => this.webview);
@@ -50,8 +50,8 @@ export default class YTWebView extends Component<YTWebViewProps> {
   };
 
   onStateChange = (state: YTWebViewState) => {
-    if (state === YTWebViewState.ENDED) this.props.onEnd();
-    this.props.onStateChange(state);
+    if (state === YTWebViewState.ENDED && this.props.onEnd) this.props.onEnd();
+    if (this.props.onStateChange) this.props.onStateChange(state);
   };
 
   render() {
