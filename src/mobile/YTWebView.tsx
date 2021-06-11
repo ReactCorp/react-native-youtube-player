@@ -15,12 +15,12 @@ export default class YTWebView extends Component<YTWebViewProps> {
   invokeFunctions = () => {
     // invoke fuctions
     const { onReady, onError, onPlaying, onDurationReady, onEnd } = this.props;
-    this.invoke.define("onReady", onReady!!);
-    this.invoke.define("onError", onError!!);
+    this.invoke.define("onReady", onReady!);
+    this.invoke.define("onError", onError!);
     this.invoke.define("onStateChange", this.onStateChange);
-    this.invoke.define("onPlaying", onPlaying!!);
-    this.invoke.define("onEnd", onEnd!!);
-    this.invoke.define("onDurationReady", onDurationReady!!);
+    this.invoke.define("onPlaying", onPlaying!);
+    this.invoke.define("onEnd", onEnd!);
+    this.invoke.define("onDurationReady", onDurationReady!);
   };
 
   componentDidMount = async () => {
