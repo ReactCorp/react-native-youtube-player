@@ -36,7 +36,7 @@ const _onStateChange = ({ data }) => {
   onStateChange(data);
 };
 
-const createPlayer = opts => {
+const createPlayer = (opts) => {
   const options = {
     width,
     height,
@@ -49,8 +49,8 @@ const createPlayer = opts => {
       playsinline: 1,
       modestbranding: 1,
       showinfo: 0,
-      ...opts.playerVars
-    }
+      ...opts.playerVars,
+    },
   };
 
   player = YouTubePlayer("player", options);
@@ -71,12 +71,18 @@ const playVideo = () => {
 const pauseVideo = () => {
   player.pauseVideo().then(() => {});
 };
-const seekTo = s => {
+const seekTo = (s) => {
   player.seekTo(s).then(() => {});
+};
+const getVolume = () => {
+  return player.getVolume();
+};
+const setVolume = (v) => {
+  player.setVolume(v);
 };
 
 const _setDuration = () =>
-  player.getDuration().then(s => {
+  player.getDuration().then((s) => {
     duration = s;
     onDurationReady(s);
   });
@@ -84,7 +90,7 @@ const _setDuration = () =>
 // send current time every 1000 ms
 const _setCurrentTime = () => {
   setInterval(() => {
-    if (!isPaused) player.getCurrentTime().then(s => onPlaying(s));
+    if (!isPaused) player.getCurrentTime().then((s) => onPlaying(s));
   }, 500);
 };
 
@@ -94,3 +100,5 @@ invoke.define("createPlayer", createPlayer);
 invoke.define("playVideo", playVideo);
 invoke.define("pauseVideo", pauseVideo);
 invoke.define("seekTo", seekTo);
+invoke.define("getVolume", getVolume);
+invoke.define("setVolume", setVolume);
