@@ -1,26 +1,28 @@
 {
   "name": "example",
-  "version": "1.0.0",
-  "main": "node_modules/expo/AppEntry.js",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "start": "react-native start",
+    "pods": "pod-install --quiet"
   },
   "dependencies": {
-    "expo": "~47.0.8",
-    "expo-status-bar": "~1.4.2",
     "react": "18.1.0",
-    "react-native": "0.70.5",
-    "react-dom": "18.1.0",
-    "react-native-web": "~0.18.9"
+    "react-native": "0.70.6",
+    "react-native-reanimated": "^2.13.0",
+    "react-native-orientation-locker": "^1.5.0",
+    "@react-native-community/slider": "^4.4.0",
+    "react-native-webview": "^11.26.0",
+    "react-native-webview-invoke": "^0.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
+    "@types/react": "^18.0.26",
+    "@types/react-native": "^0.70.8",
     "babel-plugin-module-resolver": "^4.1.0",
-    "@expo/webpack-config": "^0.17.2",
-    "babel-loader": "^8.1.0"
-  },
-  "private": true
+    "metro-react-native-babel-preset": "0.72.3"
+  }
 }
