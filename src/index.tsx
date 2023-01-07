@@ -1,5 +1,10 @@
-import Player from './Player'
+import YouTubePlayer from './Player'
+import Controls from './Controls'
+import ProgressBar from './ProgressBar'
+import YTWebView from './YTWebView'
 
-export default Player
+export { YouTubePlayer, Controls, ProgressBar, YTWebView }
+
+export default YouTubePlayer
 
 export * from './types'
