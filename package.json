@@ -1,7 +1,8 @@
 {
+  "private": true,
   "name": "react-native-youtube-player",
-  "version": "0.1.0",
-  "description": "test",
+  "version": "2.0.0",
+  "description": "Youtube Player for React Native",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
@@ -33,31 +34,43 @@
     "prepack": "bob build",
     "release": "release-it",
     "example": "yarn --cwd example",
-    "bootstrap": "yarn example && yarn install"
+    "bootstrap": "yarn example && yarn install",
+    "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build"
   },
   "keywords": [
     "react-native",
     "ios",
     "android"
   ],
-  "repository": "https://github.com/keima/react-native-youtube-player",
+  "repository": "https://github.com/ReactCorp/react-native-youtube-player",
   "author": "Kouta Imanaka <keima@p-side.net> (https://github.com/keima)",
+  "contributors": [
+    "Youssouf EL Azizi <youssoufelazizi@gmail.com> (https://github.com/yjose/)"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/keima/react-native-youtube-player/issues"
+    "url": "https://github.com/ReactCorp/react-native-youtube-player/issues"
   },
-  "homepage": "https://github.com/keima/react-native-youtube-player#readme",
+  "homepage": "https://github.com/ReactCorp/react-native-youtube-player#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
+  "dependencies": {
+    "@react-native-community/slider": "^4.4.0",
+    "react-native-webview": "^11.26.0",
+    "react-native-webview-invoke": "^0.5.1",
+    "youtube-player": "^5.5.2",
+    "react-native-orientation-locker": "^1.5.0",
+    "react-native-reanimated": "^2.13.0"
+  },
   "devDependencies": {
-    "@evilmartians/lefthook": "^1.2.2",
     "@commitlint/config-conventional": "^17.0.2",
+    "@evilmartians/lefthook": "^1.2.2",
     "@react-native-community/eslint-config": "^3.0.2",
     "@release-it/conventional-changelog": "^5.0.0",
     "@types/jest": "^28.1.2",
-    "@types/react": "~17.0.21",
-    "@types/react-native": "0.70.0",
+    "@types/react": "~18.0.0",
+    "@types/react-native": "~0.70.0",
     "commitlint": "^17.0.2",
     "del-cli": "^5.0.0",
     "eslint": "^8.4.1",
@@ -77,7 +90,10 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "react-native-webview": "*",
+    "react-native-orientation-locker": "*",
+    "react-native-reanimated": "2.x"
   },
   "engines": {
     "node": ">= 16.0.0"
@@ -126,7 +142,8 @@
           "singleQuote": true,
           "tabWidth": 2,
           "trailingComma": "es5",
-          "useTabs": false
+          "useTabs": false,
+          "semi": false
         }
       ]
     }
@@ -140,7 +157,8 @@
     "singleQuote": true,
     "tabWidth": 2,
     "trailingComma": "es5",
-    "useTabs": false
+    "useTabs": false,
+    "semi": false
   },
   "react-native-builder-bob": {
     "source": "src",
