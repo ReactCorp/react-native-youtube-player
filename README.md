@@ -1,3 +1,33 @@
+ReactCorp/react-native-youtube-player
+=====
+
+Fork of barmej/react-native-youtube-player.
+
+## Changes from the original
+
+- changes orientation detection library
+  - uses `react-native-orientation-locker@^1.5.0` instead of `react-native-orientation@^3.1.3`
+- update `react-native-reanimated` version
+  - uses `^2.13.0` instead of `^1.0.1`
+- update `@react-native-community/slider` version
+  - uses `^4.4.0` instead of `^2.0.0`
+
+## Installation
+
+```
+$ yarn add @react-native-community/slider@^4.4.0 react-native-reanimated@^2.13.0 react-native-orientation-locker@^1.5.0
+$ yarn add react-native-yt-player@https://github.com/ReactCorp/react-native-youtube-player
+```
+
+In addition, reanimated installation required ( if not yet ).
+https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/installation/
+
+-----
+
+** Below is original README **
+
+-----
+
 # React Native Youtube Player
 
 A cross-platform Youtube Player component for React Native Built using the official [YouTube IFrame Player API](https://developers.google.com/youtube/iframe_api_reference).
@@ -15,7 +45,7 @@ A cross-platform Youtube Player component for React Native Built using the offic
 
 - Checkout the [example/](https://github.com/barmej/react-native-youtube-player/tree/master/example) folder for demo source code.
 
-![Demo](https://raw.githubusercontent.com/barmej/react-native-youtube-player/master/demo.gif)
+![Demo](https://raw.githubusercontent.com/barmej/react-native-youtube-player/master/docs/demo.gif)
 
 ## Installation
 

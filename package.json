@@ -1,90 +1,104 @@
 {
-  "name": "react-native-yt-player",
-  "version": "1.0.6",
+  "private": true,
+  "name": "react-native-youtube-player",
+  "version": "2.0.0",
   "description": "Youtube Player for React Native",
-  "main": "lib/commonjs/mobile/index.js",
-  "react-native": "lib/module/mobile/index.js",
-  "module": "lib/module/mobile/index.js",
+  "main": "lib/commonjs/index",
+  "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
+  "react-native": "src/index",
+  "source": "src/index",
   "files": [
     "src",
-    "lib"
+    "lib",
+    "android",
+    "ios",
+    "cpp",
+    "*.podspec",
+    "!lib/typescript/example",
+    "!ios/build",
+    "!android/build",
+    "!android/gradle",
+    "!android/gradlew",
+    "!android/gradlew.bat",
+    "!android/local.properties",
+    "!**/__tests__",
+    "!**/__fixtures__",
+    "!**/__mocks__",
+    "!**/.*"
   ],
   "scripts": {
     "test": "jest",
-    "start:web": "parcel ./src/web/index.html",
-    "build:web": "rm -rf ./src/web/dist &&  rm -rf ./src/web/dist2 &&  parcel build ./src/web/index.html --out-dir ./src/web/dist && parcel build ./src/web/index2.js  --out-dir  ./src/web/dist2  ",
-    "start:mobile": "yarn example start",
-    "typescript": "tsc --noEmit",
-    "lint": "eslint --ext .js,.ts,.tsx .",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint \"**/*.{js,ts,tsx}\"",
+    "prepack": "bob build",
+    "prepare": "bob build",
     "release": "release-it",
     "example": "yarn --cwd example",
-    "bootstrap": "yarn && yarn example",
-    "prepare": "bob build"
+    "bootstrap": "yarn example && yarn install",
+    "clean": "del-cli android/build example/android/build example/android/app/build example/ios/build"
   },
+  "keywords": [
+    "react-native",
+    "ios",
+    "android"
+  ],
+  "repository": "https://github.com/ReactCorp/react-native-youtube-player",
+  "author": "Kouta Imanaka <keima@p-side.net> (https://github.com/keima)",
+  "contributors": [
+    "Youssouf EL Azizi <youssoufelazizi@gmail.com> (https://github.com/yjose/)"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ReactCorp/react-native-youtube-player/issues"
+  },
+  "homepage": "https://github.com/ReactCorp/react-native-youtube-player#readme",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
-  "keywords": [
-    "react-native-youtube",
-    "react-youtube",
-    "react-native",
-    "ios",
-    "android",
-    "tab",
-    "youtube-player",
-    "youtube"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/obytes/react-native-youtube-player.git"
+  "dependencies": {
+    "@react-native-community/slider": "^4.0.0",
+    "react-native-webview": "^11.0.0",
+    "react-native-webview-invoke": "^0.5.1",
+    "youtube-player": "^5.5.2",
+    "react-native-orientation-locker": "^1.5.0",
+    "react-native-reanimated": "^2.0.0"
   },
-  "author": "Youssouf EL Azizi <youssoufelazizi@gmail.com> (https://github.com/yjose/)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/obytes/react-native-youtube-player/issues"
-  },
-  "homepage": "https://github.com/obytes/react-native-youtube-player#readme",
   "devDependencies": {
-    "@babel/core": "^7.4.5",
-    "@commitlint/config-conventional": "^7.5.0",
-    "@expo/vector-icons": "^9.0.0",
-    "@react-native-community/bob": "^0.4.1",
-    "@types/expo": "^32.0.13",
-    "@types/react": "^16.8.17",
-    "babel-jest": "^24.1.0",
-    "babel-preset-react-native": "^4.0.0",
-    "commitlint": "^7.5.2",
-    "conventional-changelog-cli": "^2.0.12",
-    "cssnano": "^4.1.10",
-    "eslint": "^5.16.0",
-    "eslint-config-satya164": "^2.4.1",
-    "eslint-plugin-react-native-globals": "^0.1.2",
-    "husky": "^2.3.0",
-    "jest": "^24.1.0",
-    "parcel-bundler": "^1.12.3",
-    "parcel-plugin-inline-source": "^1.0.0",
-    "prettier": "^1.17.1",
-    "react-native-reanimated": "^1.0.1",
-    "release-it": "^10.1.0",
-    "typescript": "^3.4.5"
+    "@commitlint/config-conventional": "^17.0.2",
+    "@react-native-community/eslint-config": "^3.0.2",
+    "@release-it/conventional-changelog": "^5.0.0",
+    "@types/jest": "^28.1.2",
+    "@types/react": "~18.0.0",
+    "@types/react-native": "~0.70.0",
+    "commitlint": "^17.0.2",
+    "del-cli": "^5.0.0",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^28.1.1",
+    "pod-install": "^0.1.0",
+    "prettier": "^2.0.5",
+    "react": "18.1.0",
+    "react-native": "0.70.5",
+    "react-native-builder-bob": "^0.20.3",
+    "release-it": "^15.0.0",
+    "typescript": "^4.5.2"
+  },
+  "resolutions": {
+    "@types/react": "~18.0.0"
   },
   "peerDependencies": {
-    "@react-native-community/slider": "^2.0.0",
     "react": "*",
     "react-native": "*",
-    "react-native-orientation": "^3.1.3",
-    "react-native-reanimated": "*",
-    "react-native-webview": "^7.0.0",
-    "react-native-webview-invoke": "^0.5.0",
-    "youtube-player": "^5.5.2"
+    "react-native-webview": "*",
+    "react-native-orientation-locker": "*",
+    "react-native-reanimated": "2.x"
   },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-      "pre-commit": "yarn typescript"
-    }
+  "engines": {
+    "node": ">= 16.0.0"
   },
+  "packageManager": "^yarn@1.22.15",
   "jest": {
     "preset": "react-native",
     "modulePathIgnorePatterns": [
@@ -92,21 +106,72 @@
       "<rootDir>/lib/"
     ]
   },
-  "@react-native-community/bob": {
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release ${version}",
+      "tagName": "v${version}"
+    },
+    "npm": {
+      "publish": true
+    },
+    "github": {
+      "release": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": "angular"
+      }
+    }
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "@react-native-community",
+      "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": [
+        "error",
+        {
+          "quoteProps": "consistent",
+          "singleQuote": true,
+          "tabWidth": 2,
+          "trailingComma": "es5",
+          "useTabs": false,
+          "semi": false
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ],
+  "prettier": {
+    "quoteProps": "consistent",
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5",
+    "useTabs": false,
+    "semi": false
+  },
+  "react-native-builder-bob": {
     "source": "src",
     "output": "lib",
     "targets": [
       "commonjs",
       "module",
-      "typescript"
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
     ]
-  },
-  "dependencies": {
-    "@react-native-community/slider": "^2.0.0",
-    "react-native-orientation": "^3.1.3",
-    "react-native-reanimated": "^1.0.1",
-    "react-native-webview": "https://github.com/ReactCorp/react-native-webview#348d7edcf2b12cda545e0979ca2576acb0f9cc73",
-    "react-native-webview-invoke": "^0.5.1",
-    "youtube-player": "^5.5.2"
   }
 }
